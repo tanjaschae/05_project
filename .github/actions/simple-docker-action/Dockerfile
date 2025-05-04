@@ -1,6 +1,6 @@
 FROM python:3.11-slim
 
-RUN pwd
+WORKDIR /github/workspace
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
