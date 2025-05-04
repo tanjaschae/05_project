@@ -1,0 +1,12 @@
+name: "My Python Docker Action"
+description: "A custom GitHub Action using Python and Docker"
+inputs:
+  name:
+    description: "Your name"
+    required: true
+outputs:
+  greeting:
+    description: "A greeting message"
+runs:
+  using: "docker"
+  image: "Dockerfile"

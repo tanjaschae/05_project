@@ -4,6 +4,19 @@ on:
     branches:
       - main
 jobs:
+  custom-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: use custom action
+        id: custom
+        uses: ./.github/actions/simple-docker-action
+        with:
+          name: Tanja
+      - name: custom action output
+        run: |
+          echo "Greeting was: ${{ steps.custom.outputs.greeting }}"
   lint:
     runs-on: ubuntu-latest
     steps:
