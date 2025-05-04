@@ -1,9 +1,10 @@
 FROM python:3.11-slim
 
-WORKDIR /github/workspace
+WORKDIR /app
+
+COPY main.py .
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY main.py .
+ENTRYPOINT ["python", "/app/main.py"]
 
-ENTRYPOINT ["python", "main.py"]
