@@ -51,10 +51,10 @@ function run() {
             const distribution = core.getInput('distribution', { required: true });
             const javaPackage = core.getInput('java-package');
             if ((0, allowedInput_1.isAllowed)(javaVersion, "version") && (0, allowedInput_1.isAllowed)(distribution, "distribution") && (0, allowedInput_1.isAllowed)(javaPackage, "package")) {
-                console.log(`${javaVersion.toUpperCase()} is a valid fruit`);
+                console.log(`${javaVersion.toUpperCase()} ${distribution.toUpperCase()} ${javaPackage.toUpperCase()} is a valid input`);
             }
             else {
-                console.log(`${javaVersion} is not a valid fruit`);
+                console.log(`${javaVersion.toUpperCase()} ${distribution.toUpperCase()} ${javaPackage.toUpperCase()} is not a valid input`);
             }
             // OpenJDK21U-jdk_x64_linux_hotspot_21.0.7_6.tar.gz temurin
             // OpenJDK11U-jdk_x64_linux_hotspot_11.0.27_6.tar.gz
