@@ -7,12 +7,12 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-      - name: Run js action
+      - name: Run ts action
         id: setup-java
         uses: ./.github/actions/ts-custom-action
         with:
           java-version: '17'
-          distribution: 'oracle'
+          distribution: 'blubb'
           java-package: 'jdk'
       - name: Output information
         run: |

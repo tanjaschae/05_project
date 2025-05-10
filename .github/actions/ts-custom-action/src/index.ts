@@ -10,9 +10,9 @@ async function run(): Promise<void> {
         const javaPackage = core.getInput('java-package')
 
         if (isAllowed(javaVersion, "version") && isAllowed(distribution, "distribution") && isAllowed(javaPackage, "package")) {
-            console.log(`${javaVersion.toUpperCase()} is a valid fruit`);
+            console.log(`${javaVersion.toUpperCase()} ${distribution.toUpperCase()} ${javaPackage.toUpperCase()}is a valid input`);
         } else {
-            console.log(`${javaVersion} is not a valid fruit`);
+            console.log(`${javaVersion.toUpperCase()} ${distribution.toUpperCase()} ${javaPackage.toUpperCase()}is not a valid input`);
         }
 
 
