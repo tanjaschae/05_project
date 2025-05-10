@@ -43,12 +43,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core = __importStar(require("@actions/core"));
+const allowedInput_1 = require("./allowedInput");
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const javaVersion = core.getInput('java-version');
             const distribution = core.getInput('distribution', { required: true });
             const javaPackage = core.getInput('java-package');
+            if ((0, allowedInput_1.isAllowed)(javaVersion, "version") && (0, allowedInput_1.isAllowed)(distribution, "distribution") && (0, allowedInput_1.isAllowed)(javaPackage, "package")) {
+                console.log(`${javaVersion.toUpperCase()} is a valid fruit`);
+            }
+            else {
+                console.log(`${javaVersion} is not a valid fruit`);
+            }
             // OpenJDK21U-jdk_x64_linux_hotspot_21.0.7_6.tar.gz temurin
             // OpenJDK11U-jdk_x64_linux_hotspot_11.0.27_6.tar.gz
             // zulu21.42.19-ca-jdk21.0.7-linux_x64.tar.gz zulu

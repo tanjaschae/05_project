@@ -1,4 +1,4 @@
-name: JS Custom Action
+name: TS Custom Action
 on:
   workflow_dispatch:
 jobs:
