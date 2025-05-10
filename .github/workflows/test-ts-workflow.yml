@@ -1,4 +1,4 @@
-name: Deployment
+name: TS Custom Action
 on:
   push:
     branches:

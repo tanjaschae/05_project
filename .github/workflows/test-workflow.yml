@@ -1,4 +1,4 @@
-name: Deployment
+name: JS Custom Action
 on:
   workflow_dispatch:
 jobs:
