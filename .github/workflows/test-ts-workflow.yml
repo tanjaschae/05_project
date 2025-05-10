@@ -1,19 +1,21 @@
-name: TS Custom Action
+name: JS Custom Action
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 jobs:
   information:
     runs-on: ubuntu-latest
     steps:
-    - name: Get code
-      uses: actions/checkout@v3
-    - name: Run ts action
-      id: some-id
-      uses: ./.github/actions/ts-custom-action
-      with:
-        example-input: 'GitHub'
-    - name: Output information
-      run: |
-        echo "Action output: ${{ steps.some-id.outputs.example-output }}"
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Run js action
+        id: setup-java
+        uses: ./.github/actions/ts-custom-action
+        with:
+          java-version: '17'
+          distribution: 'oracle'
+          java-package: 'jdk'
+      - name: Output information
+        run: |
+          echo "Action output: ${{ steps.setup-java.outputs.version }}"
+          echo "Action output: ${{ steps.setup-java.outputs.distribution }}"
+          echo "Action output: ${{ steps.setup-java.outputs.path }}"

@@ -46,10 +46,17 @@ const core = __importStar(require("@actions/core"));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const input = core.getInput('example-input');
-            core.info(`Hello, ${input}!`);
-            // Set an example output
-            core.setOutput('example-output', `Hello, ${input}!`);
+            const javaVersion = core.getInput('java-version');
+            const distribution = core.getInput('distribution', { required: true });
+            const javaPackage = core.getInput('java-package');
+            // OpenJDK21U-jdk_x64_linux_hotspot_21.0.7_6.tar.gz temurin
+            // OpenJDK11U-jdk_x64_linux_hotspot_11.0.27_6.tar.gz
+            // zulu21.42.19-ca-jdk21.0.7-linux_x64.tar.gz zulu
+            // jdk-24_linux-x64_bin.tar.gz oracle
+            core.notice(`First try with ${javaVersion} ${distribution} ${javaPackage}`);
+            core.setOutput('distribution', distribution);
+            core.setOutput('version', javaVersion);
+            core.setOutput('path', "java/home/path");
         }
         catch (error) {
             if (error instanceof Error)
