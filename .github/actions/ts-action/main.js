@@ -10,6 +10,10 @@ function run(){
 
 
    core.notice(`First try with ${javaVersion} ${distribution} ${javaPackage}`);
+
+   core.setOutput('distribution', distribution)
+   core.setOutput('version', javaVersion)
+   core.setOutput('path', "java/home/path")
 }
 
 run();

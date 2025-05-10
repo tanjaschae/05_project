@@ -10,8 +10,14 @@ jobs:
     - name: Get code
       uses: actions/checkout@v3
     - name: Run js action
+      id: setup-java
       uses: ./.github/actions/ts-action
       with:
         java-version: '17'
         distribution: 'oracle'
         java-package: 'jdk'
+    - name: Output information
+      run: |
+        echo "Action output: ${{ steps.setup-java.outputs.version }}"
+        echo "Action output: ${{ steps.setup-java.outputs.distribution }}"
+        echo "Action output: ${{ steps.setup-java.outputs.path }}"

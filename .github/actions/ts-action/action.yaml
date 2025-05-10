@@ -12,6 +12,13 @@ inputs:
     description: 'The package type (jdk, jre, jdk+fx, jre+fx)'
     required: false
     default: 'jdk'
+outputs:
+  distribution:
+    description: 'Distribution of Java that has been installed'
+  version:
+    description: 'Actual version of the java environment that has been installed'
+  path:
+    description: 'Path to where the java environment has been installed (same as $JAVA_HOME)'
 runs:
   using: node20
   main: "main.js"
