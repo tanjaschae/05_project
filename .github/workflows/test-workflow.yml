@@ -1,0 +1,9 @@
+name: Deployment
+on:
+  push:
+    branches:
+      - main
+jobs:
+  information:
+    - name: Run js action
+      uses: ./.github/actions/ts-action
