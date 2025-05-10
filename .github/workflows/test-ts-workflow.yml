@@ -1,0 +1,19 @@
+name: Deployment
+on:
+  push:
+    branches:
+      - main
+jobs:
+  information:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get code
+      uses: actions/checkout@v3
+    - name: Run ts action
+      id: some-id
+      uses: ./.github/actions/ts-custom-action
+      with:
+        example-input: 'GitHub'
+    - name: Output information
+      run: |
+        echo "Action output: ${{ steps.some-id.outputs.example-output }}"

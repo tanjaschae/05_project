@@ -1,0 +1,17 @@
+name: 'My Custom Action'
+description: 'An example GitHub Action built with TypeScript'
+author: 'Your Name'
+
+inputs:
+  example-input:
+    description: 'An example input'
+    required: true
+    default: 'World'
+
+outputs:
+  example-output:
+    description: 'An example output'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
